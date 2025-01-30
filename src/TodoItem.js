@@ -1,8 +1,9 @@
-function TodoItem() {
+import "./TodoItem.css";
+function TodoItem({ text, completed }) {
   return (
     <li>
       <span>v</span>
-      <p>Estudiar React</p>
+      <p>{text}</p>
       <span>x</span>
     </li>
   );
