@@ -1,4 +1,7 @@
+import "./CreateTodoButton.css";
+import { ReactComponent as PlusIcon } from "./icons/mas.svg";
+
 function CreateTodoButton() {
-  return <button>Añadir nueva tarea</button>;
+  return <PlusIcon className="icon-plus" />;
 }
 export { CreateTodoButton };

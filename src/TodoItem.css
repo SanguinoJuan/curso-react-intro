@@ -1,7 +1,51 @@
 li {
   background-color: #fff;
-  margin: 10px;
-  border: 1px solid #646464;
+  margin: 25px 0px;
   border-radius: 5px;
   padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.493);
+}
+
+li:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.895);
+}
+
+.icon-close {
+  position: absolute;
+  right: 10px;
+  top: -10px;
+  color: #646464;
+  width: 20px;
+  height: auto;
+}
+
+.icon-close:hover {
+  color: red;
+  width: 22px;
+  height: auto;
+}
+
+.icon-check {
+  color: #646464;
+  width: 25px;
+  height: auto;
+}
+.icon-check:hover {
+  color: #8bbf40;
+  width: 27px;
+  height: auto;
+}
+
+p {
+  margin: 0px 0px 0px 10px;
+  font-size: 18px;
+  color: #646464;
+  padding: 0px 20px;
+  text-align: left;
+  width: 100%;
+  text-align: left;
 }

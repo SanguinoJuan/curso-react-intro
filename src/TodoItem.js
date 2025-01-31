@@ -1,10 +1,13 @@
 import "./TodoItem.css";
+import { ReactComponent as CheckIcon } from "./icons/check.svg";
+import { ReactComponent as CloseIcon } from "./icons/cerrar.svg";
+
 function TodoItem({ text, completed }) {
   return (
     <li>
-      <span>v</span>
+      <CheckIcon className="icon-check" />
       <p>{text}</p>
-      <span>x</span>
+      <CloseIcon className="icon-close" />
     </li>
   );
 }
