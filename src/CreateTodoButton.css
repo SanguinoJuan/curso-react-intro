@@ -3,5 +3,10 @@
   width: 40px;
   height: auto;
   background-color: white;
-  border-radius: 9px;
+  border-radius: 10px;
+}
+
+.icon-plus:hover {
+  width: 45px;
+  height: auto;
 }
