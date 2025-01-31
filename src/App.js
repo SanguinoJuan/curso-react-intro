@@ -5,12 +5,14 @@ import { TodoItem } from "./TodoItem";
 import { CreateTodoButton } from "./CreateTodoButton";
 import React from "react";
 const defaultTodos = [
-  { text: "Casarme con mi novia", completed: true },
+  { text: "Viajar con mi novia", completed: true },
   { text: "Tomar el curso de intro a React", completed: false },
   { text: "Llorar con la llorona", completed: false },
   { text: "LALALALA", completed: false },
 ];
 function App() {
+  
+
   return (
     <div
       style={{
@@ -24,7 +26,6 @@ function App() {
     >
       <TodoCounter completed={3} total={4} />
       <TodoSearch />
-
       <TodoList>
         {defaultTodos.map((todo) => (
           <TodoItem
@@ -34,7 +35,6 @@ function App() {
           />
         ))}
       </TodoList>
-
       <CreateTodoButton />
     </div>
   );

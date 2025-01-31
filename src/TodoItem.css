@@ -6,8 +6,9 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.493);
+  height: 10vh;
+  position: relative;
 }
 
 li:hover {
@@ -16,11 +17,12 @@ li:hover {
 
 .icon-close {
   position: absolute;
-  right: 10px;
-  top: -10px;
+  top: 0px;
+  right: 0px;
   color: #646464;
   width: 20px;
   height: auto;
+  align-self: flex-start;
 }
 
 .icon-close:hover {
