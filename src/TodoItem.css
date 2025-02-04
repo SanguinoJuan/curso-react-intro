@@ -34,7 +34,7 @@ li:hover {
   width: 25px;
   height: auto;
 }
-.icon-check:hover {
+.icon-check--active {
   color: #8bbf40;
   width: 27px;
   height: auto;
@@ -48,4 +48,8 @@ p {
   text-align: left;
   width: 100%;
   text-align: left;
+}
+
+.TodoItem-p--complete {
+  text-decoration: line-through;
 }
