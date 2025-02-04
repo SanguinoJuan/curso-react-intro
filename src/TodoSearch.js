@@ -1,10 +1,7 @@
 import "./TodoSearch.css";
 import React from "react";
 
-function TodoSearch() {
-  const [searchValue, setSearchValue] = React.useState("");
-  console.log(searchValue);
-
+function TodoSearch({ searchValue, setSearchValue }) {
   return (
     <input
       placeholder="Busca tu ToDo"

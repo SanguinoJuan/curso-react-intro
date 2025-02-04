@@ -9,10 +9,29 @@ const defaultTodos = [
   { text: "Tomar el curso de intro a React", completed: false },
   { text: "Llorar con la llorona", completed: false },
   { text: "LALALALA", completed: false },
+  { text: "Juan", completed: false },
 ];
 function App() {
-  
+  const [todos, setTodos] = React.useState(defaultTodos);
+  const [searchValue, setSearchValue] = React.useState("");
+  const completedTodos = todos.filter((todo) => !!todo.completed).length;
+  const totalTodos = todos.length;
 
+  const searchValuedTodos = todos.filter((todo) => {
+    return todo.text.toLowerCase().includes(searchValue.toLowerCase());
+  });
+  const completeTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+    setTodos(newTodos);
+  };
+  const deleteTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  };
   return (
     <div
       style={{
@@ -24,18 +43,22 @@ function App() {
         textAlign: "center", // Centra el texto dentro de los elementos
       }}
     >
-      <TodoCounter completed={3} total={4} />
-      <TodoSearch />
+      <TodoCounter completed={completedTodos} total={totalTodos} />
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <TodoList>
-        {defaultTodos.map((todo) => (
+        {searchValuedTodos.map((todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
           />
         ))}
       </TodoList>
-      <CreateTodoButton />
+      <CreateTodoButton
+        addTodo={(text) => setTodos([...todos, { text, completed: false }])}
+      />
     </div>
   );
 }
